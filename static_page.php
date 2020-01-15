@@ -1,5 +1,5 @@
 <?php
-
+require_once __DIR__ . '/vendor/autoload.php';
 use classes\News;
 use classes\Page;
 use classes\StaticPage;
