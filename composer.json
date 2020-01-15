@@ -1,0 +1,16 @@
+{
+    "name": "vendor/example",
+    "authors": [
+        {
+            "name": "Vladimir Safonov",
+            "email": "webdev3@globalair-kz.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "classes\\": "classes/",
+            "traits\\": "traits/"
+        }
+    },
+    "require": {}
+}
