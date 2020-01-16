@@ -1,8 +1,8 @@
 <?php
 
-use classes\News;
+require_once __DIR__ . '/vendor/autoload.php';
 
-//require_once 'classes/News.php';
+use classes\News;
 
 $id = 555;
 $page = new News($id);

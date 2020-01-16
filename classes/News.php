@@ -4,9 +4,6 @@ namespace classes;
 
 use traits\Tag;
 
-require_once 'Cached.php';
-require_once './traits/Tag.php';
-
 class News extends Cached
 {
     use Tag;
