@@ -9,29 +9,29 @@
     $cat->close();
 }
 
-echo '<br />';
+echo '<hr>';
 
 {
     unset($cat);
 
-    function simple($from = 0, $to = 10)
+    $simple = function($from = 0, $to = 10)
     {
         for ($i = $from; $i < $to; $i++) {
             yield $i;
         }
-    }
+    };
 
-    $value = simple();
+    //$value = simple();
 
-    foreach ($value as $val) {
+    foreach ($simple() as $val) {
         echo ($val * $val) . ' ';
     }
 }
 
-echo '<br />';
+echo '<hr>';
 
 {
-    $value = simple(4);
+    $value = $simple(4);
 
     while ($value->valid()) {
         echo ($value->current() * $value->current()) . ' ';
@@ -39,10 +39,10 @@ echo '<br />';
     }
 }
 
-echo '<br />';
+echo '<hr>';
 
 {
-    $message = 'cant work';
+    $message = 'cant work because:<br />';
     $check = function (array $errors) use ($message)
     {
         if (isset($errors) && count($errors) > 0) {
@@ -53,19 +53,23 @@ echo '<br />';
         }
     };
 
+    $message = 'adf';
+
 
     echo '<pre>';
-    print_r($check);
+    //print_r($check);
     echo '</pre>';
+    echo $check(['FIRST', 'Second']);
 
 }
-echo '<br />';
+
+echo '<hr>';
 
 {
 
 }
 
-echo '<br />';
+echo '<hr>';
 
 {
 
