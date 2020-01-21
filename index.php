@@ -7,6 +7,8 @@
 <a href="virtual_arr.php">Virtual array</a><br />
 <a href="SPL.php">SPL</a><br />
 <a href="string_speed.php">string_speed</a><br />
+<a href="reflection.php">Reflections</a><br />
+<a href="http&www.php">Work web</a><br />
 <?php
 
 require_once 'config/main.php';
