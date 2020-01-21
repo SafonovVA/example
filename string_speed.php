@@ -8,7 +8,7 @@ class Some
     public int $a = 4;
     public int $b = 5;
 
-    public function __construct($newA, $newB)
+    public function __construct($newA = 0, $newB = 0)
     {
         $this->a = $newA;
         $this->b = $newB;
@@ -23,24 +23,43 @@ class Some
     {
         echo $this->a . ' ' . $this->b . ' ' . __METHOD__ . ' ' . __CLASS__;
     }
+
+    public function __toString()
+    {
+        return 'obj: a = ' . $this->a . ', b = ' . $this->b . '<br />';
+    }
 }
-call_user_func(['classes\CalculateTime', 'Start']);
 
-$class = 'Some';
 
-$a = new $class();
+$className = 'Some';
+
+$a = new $className();
 $b = [5, 4];
 
-$new = new ReflectionClass($class);
-$obj = $new->newInstance(101, 303);
+try {
+    $class = new ReflectionClass($className);
+} catch (ReflectionException $e) {
+    echo 'Exception: ' . $e->getMessage();
+}
+$obj = $class->newInstance(101, 303);
 
+call_user_func(['classes\CalculateTime', 'Start']);
 echo 'First ojb: ' . $obj . '<br />';
+call_user_func(['classes\CalculateTime', 'getDiff']);
 
 $obj = call_user_func_array([$class, 'newInstance'], $b);
-echo 'Second obj' . $obj . '<br />';
 
-//call_user_func_array([&$a, 'setA'], $b);
-//call_user_func([$a, 'getA']);
+call_user_func(['classes\CalculateTime', 'Start']);
+echo "Second obj $obj <br />";
+call_user_func(['classes\CalculateTime', 'getDiff']);
+
+
+call_user_func_array([&$a, 'setA'], $b);
+call_user_func([$a, 'getA']);
 
 call_user_func(['classes\CalculateTime', 'getDiff']);
+
+
+
+
 
