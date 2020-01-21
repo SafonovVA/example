@@ -43,6 +43,9 @@ try {
 }
 $obj = $class->newInstance(101, 303);
 
+
+call_user_func(['classes\CalculateTime', 'Start']);
+
 call_user_func(['classes\CalculateTime', 'Start']);
 echo 'First ojb: ' . $obj . '<br />';
 call_user_func(['classes\CalculateTime', 'getDiff']);
@@ -57,9 +60,20 @@ call_user_func(['classes\CalculateTime', 'getDiff']);
 call_user_func_array([&$a, 'setA'], $b);
 call_user_func([$a, 'getA']);
 
+
 call_user_func(['classes\CalculateTime', 'getDiff']);
 
+/**
+ * Documentation for next function
+ * @param integer $a
+ * @param integer $b
+ */
+function fun(int $a, int $b)
+{
+    echo "$a , $b";
+}
 
-
+$obj = new ReflectionFunction('fun');
+var_dump($obj->getDocComment());
 
 

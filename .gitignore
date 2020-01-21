@@ -10,4 +10,6 @@
 /vendor
 
 #nginx logs files
-/logs
+/logs/access.log
+/logs/error.log
+/logs/php_log.log
