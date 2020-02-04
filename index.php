@@ -9,6 +9,9 @@
 <a href="string_speed.php">string_speed</a><br />
 <a href="reflection.php">Reflections</a><br />
 <a href="httpwww.php">Work web</a><br />
+<a href="mail.php">Mails</a><br />
+<a href="session.php">Session</a><br />
+<a href="filter.php">Filter</a><br />
 <?php
 
 require_once 'config/main.php';
