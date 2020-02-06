@@ -12,9 +12,11 @@
 <a href="mail.php">Mails</a><br />
 <a href="session.php">Session</a><br />
 <a href="filter.php">Filter</a><br />
+<a href="database.php">PDO</a><br />
 <?php
 
 require_once 'config/main.php';
+
 
 if (!@filemtime('text.txt')) {
     echo '<hr>File not found<hr>';
