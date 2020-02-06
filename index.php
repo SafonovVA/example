@@ -13,6 +13,7 @@
 <a href="session.php">Session</a><br />
 <a href="filter.php">Filter</a><br />
 <a href="database.php">PDO</a><br />
+<a href="images.php">Images</a><br />
 <?php
 
 require_once 'config/main.php';

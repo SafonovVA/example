@@ -68,11 +68,13 @@ catch (PDOException $e) {
     <title>Database</title>
 </head>
 <body>
-<table>
-    <form action="addnews.php" method="post">
+<form action="addnews.php" method="post">
+    <table>
         <tr>
             <td>Title</td>
-            <td><input type="text" name="name"></td>
+            <td><label>
+                    <input type="text" name="name">
+                </label></td>
         </tr>
         <tr>
             <td>Content</td>
@@ -84,8 +86,32 @@ catch (PDOException $e) {
             <td></td>
             <td><input type="submit" value="Add"></td>
         </tr>
-    </form>
+    </table>
+</form>
+
+
+<table>
+    <?php
+    $query = 'SELECT * FROM news';
+    $news = ($pdo->query($query));
+
+    $news = $news->fetchAll(PDO::FETCH_CLASS);
+
+    foreach ($news as $new) :
+        $query = 'SELECT * FROM news_contents WHERE content_id = :content_id';
+        $content = $pdo->prepare($query);
+        $content->execute(['content_id' => $new->news_id]);
+        $content = $content->fetch(PDO::FETCH_ASSOC)['content']; ?>
+        <tr>
+            <td>
+                <?=  $new->news_id . ' ' . $content; ?>
+            </td>
+        </tr>
+    <?php
+    endforeach;
+    ?>
 </table>
+
 </body>
 </html>
 
