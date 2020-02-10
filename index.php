@@ -14,6 +14,10 @@
 <a href="filter.php">Filter</a><br />
 <a href="database.php">PDO</a><br />
 <a href="images.php">Images</a><br />
+<a href="curl.php">CURL</a><br />
+<a href="memcached.php">Memcached</a><br />
+<a href="monolog.php">monolog</a><br />
+<a href="pager.php">Pager</a><br />
 <?php
 
 require_once 'config/main.php';

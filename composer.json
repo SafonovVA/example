@@ -6,6 +6,7 @@
             "email": "webdev3@globalair-kz.com"
         }
     ],
+    "description": "PHP test",
     "autoload": {
         "psr-4": {
             "classes\\": "classes",
@@ -15,6 +16,13 @@
     "require": {
       "ext-pdo": "*",
       "ext-intl": "*",
-      "ext-gd": "*"
+      "ext-gd": "*",
+      "ext-curl": "*",
+      "ext-memcached": "*",
+      "monolog/monolog": "*",
+      "psy/psysh": "*",
+      "robmorgan/phinx": "*",
+      "phpdocumentor/phpdocumentor": "2.*"
+
     }
 }
