@@ -5,13 +5,12 @@ class DirPager extends Pager
 {
     protected string $dirname;
 
-    public function __construct(
-        View $view,
-        string $dirname = '.',
-        int $items_per_page = 10,
-        int $links_count = 3,
-        ?int $get_params = null,
-        string $counter_param = 'page'
+    public function __construct(View $view,
+                                string $dirname = '.',
+                                int $items_per_page = 10,
+                                int $links_count = 3,
+                                ?int $get_params = null,
+                                string $counter_param = 'page'
     ) {
         $this->dirname = ltrim($dirname, '/');
 
